@@ -1,0 +1,30 @@
+#  packages
+express
+body-parser
+cors
+dotenv
+Multer
+mysql
+
+
+
+# apis
+
+* Allow users to search for job listings by title, location, and company.
+* Provide a resume upload feature (use file input or drag-and-drop).
+* Implement RESTful APIs for managing job listings and user applications.
+* Handle resume uploads (use Multer or another file-uploading middleware).
+* Database: MySQL
+* Create jobs and applications tables.
+
+
+model - 
+
+
+
+routes 
+
+1.job Create.  /jobs
+2. job fetch   /jobs
+3. users register / signup 
+
