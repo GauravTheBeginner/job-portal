@@ -84,12 +84,18 @@ function Job() {
             <p style={{ margin: '0.5rem 0', color: '#555' }}><strong>Salary:</strong> {job.salary}</p>
             <p style={{ margin: '0.5rem 0', color: '#555' }}><strong>Type:</strong> {job.type}</p>
             <p style={{ margin: '0.5rem 0', color: '#555' }}><strong>Status:</strong> {job.status}</p>
-            <button
-              style={{ marginTop: '1rem', width: '100%', padding: '0.5rem', background: '#28a745', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 'bold', cursor: 'pointer' }}
-              onClick={() => { setSelectedJob(job); setShowApply(true); }}
-            >
-              Apply
-            </button>
+            {job.status === 'applied' ? (
+              <div style={{ marginTop: '1rem', width: '100%', padding: '0.5rem', background: '#ccc', color: '#333', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold' }}>
+                Already Applied
+              </div>
+            ) : (
+              <button
+                style={{ marginTop: '1rem', width: '100%', padding: '0.5rem', background: '#28a745', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 'bold', cursor: 'pointer' }}
+                onClick={() => { setSelectedJob(job); setShowApply(true); }}
+              >
+                Apply
+              </button>
+            )}
           </div>
         ))}
       </div>
