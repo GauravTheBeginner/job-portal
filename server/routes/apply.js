@@ -21,6 +21,17 @@ router.post('/', async (req, res) => {
         res.json({ error: 'Please submit full details' });
         return;
     }
+    // Check if user already applied for this job
+    const existing = await prisma.application.findFirst({
+        where: {
+            userId: parseInt(userId, 10),
+            jobId: parseInt(jobId, 10)
+        }
+    });
+    if (existing) {
+        res.status(400).json({ error: 'You have already applied for this job.' });
+        return;
+    }
     const application = await prisma.application.create({
         data: {
             userId: parseInt(userId, 10),
